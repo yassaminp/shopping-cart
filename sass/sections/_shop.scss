@@ -1,0 +1,90 @@
+.section{
+    margin:5rem 0;
+    width: 100%;
+}
+.carts-wrapper{
+    margin: 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min-content , 22rem));
+    gap: 3rem;
+    justify-content: center;
+    
+    @include response(lg){
+        gap: 1rem;
+    }
+
+    @include response(md){
+        grid-template-columns: repeat(3, minmax(min-content ,20rem));
+    }
+
+    @include response(sm){
+        grid-template-columns: repeat(2, 20rem);
+        gap: 2rem;
+    }
+    
+
+    .cart{
+        border: 0.2rem solid color(primary);
+        border-radius: 0.3rem;
+        overflow: hidden;
+        height: 35rem;
+
+        &-img{
+            width: 100%;
+            object-fit: cover;
+            height: 50%;
+        }
+
+        &-details{
+            padding: 1.5rem;
+            @include response(xl){
+                padding: 0.7rem;
+            }
+
+            &-heading{
+                font-size: size(md);
+                @include response(xl){
+                    font-size: size(sm);
+                }
+            }
+
+            &-paragraph{
+                font-size: size(sm);
+                text-align: left;
+                margin: 1rem 0;
+                width: 100%;
+                user-select: none;
+                @include response(xl){
+                    font-size: size(xs)
+                }
+            }
+
+            &-amount{
+                @include flexposition(space-between);
+                margin-top: 2rem;
+                
+                &-price{
+                    font-size: size(md);
+                    font-weight: 700;
+                }
+
+                
+            }
+        }
+    }
+} 
+.cart-details-amount-box{
+              
+    @include flexposition();
+    gap: 1rem;
+    font-size: size(sm);
+
+    .decrease-icon{
+        color: red;
+        cursor: pointer;
+    }
+    .increase-icon{
+        color: color(dark-green);
+        cursor: pointer;
+    }
+}

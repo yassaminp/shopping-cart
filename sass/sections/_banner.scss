@@ -1,0 +1,50 @@
+
+
+// navbar style 
+.header{
+    height: 15vh;
+    width: 100%;
+    background-color: color(primary);
+}
+
+.navbar{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    @include response(sm){
+        width: 90%
+    }
+    
+    
+    @include flexposition(space-between);
+
+    &-heading{
+        font-size: size(xl);
+        color: color(secondary);
+    }
+
+    &-cart{
+        background-color: color(secondary);
+        padding: 0.6rem;
+        border-radius: 0.3rem;
+        position: relative;
+        color: color(primary);
+
+        &-icon{
+            font-size:size(lg) ;
+
+        }
+
+        &-amount{
+            position: absolute;
+            background-color: red;
+            padding: 0.2rem;
+            color: #fff;
+            right: -0.7rem;
+            top: -1rem;
+            border-radius: 0.3rem;
+        }
+    }
+}
+
+// navbar style end 

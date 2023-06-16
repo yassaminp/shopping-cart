@@ -1,0 +1,103 @@
+.shopping-carts{
+    width: 100%;
+    text-align: center;
+    margin: 5rem 0 ;
+}
+
+.carts-heading{
+    color: color(primary);
+
+    &-title{
+        font-size: size(lg);
+    }
+
+    &-btn{
+        margin:1.5rem 0.5rem ;
+        padding: 0.3rem 0.7rem;
+        font-size: size(xs);
+        font-weight: 600;
+        outline: none;
+        border: none;
+        border-radius: 0.3rem;
+        @include transition;
+        cursor: pointer;
+
+    }
+    .back-btn{
+        border: 0.15rem solid color(primary);
+        background-color: color(secondary);
+
+
+        &:hover{
+            background-color: color(tertiary);
+            color: color(secondary);
+        }
+    }
+    .checkout-btn{
+        background-color: color(dark-green);
+        color: #fff;
+
+        &:hover{
+            background-color: darken(color(dark-green) , 8%);
+        }
+    }
+    .clear-btn{
+        background-color: color(dark-red);
+        color: #fff;
+        &:hover{
+            background-color: darken(color(dark-red) , 8%);
+        }
+    }
+
+}
+.carts-item{
+    border: 0.2rem solid color(tertiary);
+    @include flexposition ;
+    width: 32rem;
+    height: 13rem;
+    margin: 2rem auto 2rem auto;
+    color: color(primary);
+    overflow: hidden;
+
+    &-img{
+       width: 40%;
+       height: 100%;
+       object-fit: cover;
+    }
+
+    &-details{
+        width: 60%;
+        .details-name-price-x{
+            padding: 0 0.8rem;
+            @include flexposition(space-between);
+            margin-bottom: 2rem;
+            
+            .cross-icon{
+                font-size: size(xs);
+                cursor: pointer;
+
+                &:hover{
+                    color: color(dark-red);
+                }
+            }
+
+            .name-price{
+                @include flexposition;
+                gap: 1rem;
+
+                .price{
+                    font-size: size(sm)- 0.2rem;
+                    font-weight: 600;
+                    background-color: color(primary);
+                    color: color(secondary);
+                    padding: 0.2rem 0.4rem;
+                    border-radius: 0.3rem;
+                }
+            }
+            
+        }
+        .item-total-price{
+            margin-top: 2rem;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+$colors:(
+    primary : #0d1b2a,
+    secondary : #e0e1dd ,
+    tertiary : #415a77,
+    dark-green: rgb(13, 128, 40),
+    dark-red:rgb(200, 12, 12)
+);
+
+@function color($color-name){
+    @return map-get($colors , $color-name );
+};
+
+$font-sizes:(
+    xl:3rem ,
+    lg:2.5rem ,
+    md:2rem ,
+    sm: 1.8rem ,
+    xs:1.6rem
+);
+
+@function size($size){
+    @return map-get($font-sizes , $size);
+}
+
+@mixin flexposition($justcontent:center , $alignitem:center){
+    display: flex;
+    justify-content: $justcontent;
+    align-items: $alignitem;
+}
+
+
+@mixin transition($property:all ,$duration:0.2s , $function:linear ){
+    transition: $property $duration $function ;
+    -webkit-transition: $property $duration $function ;
+    -o-transition: $property $duration $function;
+    -moz-transition: $property $duration $function;
+}
+
+
+@mixin response($breakPoint){
+    @if($breakPoint==xl){
+        @media (max-width:1020px){
+            @content ;
+        }
+    }
+    @if($breakPoint==lg){
+        @media (max-width:890px){
+            @content ;
+        }
+    }
+    @if($breakPoint==md){
+        @media (max-width:768px){
+            @content ;
+        }
+    }
+    @if($breakPoint== sm){
+        @media (max-width:650px){
+            @content ;
+        }
+    }
+}
